@@ -50,6 +50,7 @@ public class StudentskiSistem
 
     public static void DodajStudenta()
     {
+        // Anand unosi kod rjesenja ove metode
         Console.Write("Unesite broj indeksa: ");
         int brojIndeksa = int.Parse(Console.ReadLine());
         Console.Write("Unesite ime studenta: ");
@@ -63,6 +64,7 @@ public class StudentskiSistem
 
     public static void DodajMasterStudenta()
     {
+        // Anand unosi kod rjesenja ove metode
         Console.Write("Unesite broj indeksa: ");
         int brojIndeksa = int.Parse(Console.ReadLine());
         Console.Write("Unesite ime studenta: ");
@@ -78,6 +80,7 @@ public class StudentskiSistem
 
     public static void IspisiStudente()
     {
+        // Anand unosi kod rjesenja ove metode
         foreach (var student in studenti)
         {
             student.PrikaziDetalje();
