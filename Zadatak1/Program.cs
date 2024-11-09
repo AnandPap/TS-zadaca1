@@ -78,7 +78,10 @@ public class StudentskiSistem
 
     public static void IspisiStudente()
     {
-        // Abdullah unosi kod rjesenja ove metode
+        foreach (var student in studenti)
+        {
+            student.PrikaziDetalje();
+        }
     }
 
     public static void IspisiStudenta(int brojIndeksa)
