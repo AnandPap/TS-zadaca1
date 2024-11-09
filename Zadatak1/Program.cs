@@ -90,17 +90,36 @@ public class StudentskiSistem
     public static void IspisiStudenta(int brojIndeksa)
     {
         // Abdullah unosi kod rjesenja ove metode
+
+        Student student = studenti.Find(s => s.BrojIndeksa == brojIndeksa);
+    if (student == null)
+    {
+        Console.WriteLine("Student sa datim indeksom nije pronađen.");
+        return;
+    }
+
+    student.PrikaziDetalje();
     }
 
     public static void ObrisiStudenta(int brojIndeksa)
     {
         // Abdullah unosi kod rjesenja ove metode
+
+        Student student = studenti.Find(s => s.BrojIndeksa == brojIndeksa);
+    if (student == null)
+    {
+        Console.WriteLine("Student sa datim indeksom nije pronađen.");
+        return;
+    }
+
+    studenti.Remove(student);
+    Console.WriteLine("Student je uspješno obrisan.");
+
     }
 
     public static void AzurirajStudenta(int brojIndeksa)
     {
         // Ahmed unosi kod rjesenja ove metode.
-        // .
 
         Student student = studenti.Find(s => s.BrojIndeksa == brojIndeksa);
     if (student == null)
@@ -150,7 +169,6 @@ public class StudentskiSistem
         Console.WriteLine("Nema studenata koji odgovaraju pretrazi.");
         return;
     }
-
     Console.WriteLine("Pronađeni studenti:");
     foreach (Student s in rezultatiPretrage)
     {
