@@ -99,7 +99,8 @@ public class StudentskiSistem
 
     public static void AzurirajStudenta(int brojIndeksa)
     {
-        // Ahmed unosi kod rjesenja ove metode
+        // Ahmed unosi kod rjesenja ove metode.
+        // .
 
         Student student = studenti.Find(s => s.BrojIndeksa == brojIndeksa);
     if (student == null)
