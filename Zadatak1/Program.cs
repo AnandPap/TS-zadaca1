@@ -100,11 +100,61 @@ public class StudentskiSistem
     public static void AzurirajStudenta(int brojIndeksa)
     {
         // Ahmed unosi kod rjesenja ove metode
+
+        Student student = studenti.Find(s => s.BrojIndeksa == brojIndeksa);
+    if (student == null)
+    {
+        Console.WriteLine("Student sa datim indeksom nije pronađen.");
+        return;
+    }
+
+    Console.WriteLine($"Ažuriranje podataka za studenta: {student.Ime}");
+    Console.Write("Unesite novo ime (ili pritisnite Enter da zadržite postojeće): ");
+    string novoIme = Console.ReadLine();
+    if (!string.IsNullOrWhiteSpace(novoIme))
+    {
+        student.Ime = novoIme;
+    }
+
+    Console.Write("Unesite novu godinu (ili pritisnite Enter da zadržite postojeću): ");
+    string novaGodina = Console.ReadLine();
+    if (int.TryParse(novaGodina, out int novaGodinaInt))
+    {
+        student.Godina = novaGodinaInt;
+    }
+
+    if (student is MasterStudent masterStudent)
+    {
+        Console.Write("Unesite novu temu rada (ili pritisnite Enter da zadržite postojeću): ");
+        string novaTema = Console.ReadLine();
+        if (!string.IsNullOrWhiteSpace(novaTema))
+        {
+            masterStudent.TemaRada = novaTema;
+        }
+    }
+
+    Console.WriteLine("Podaci su uspješno ažurirani.");
     }
 
     public static void PretragaStudenta(string keyword)
     {
         // Ahmed unosi kod rjesenja ove metode
+
+        List<Student> rezultatiPretrage = studenti.FindAll(s =>
+        s.BrojIndeksa.ToString().Contains(keyword) ||
+        s.Ime.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0);
+
+    if (rezultatiPretrage.Count == 0)
+    {
+        Console.WriteLine("Nema studenata koji odgovaraju pretrazi.");
+        return;
+    }
+
+    Console.WriteLine("Pronađeni studenti:");
+    foreach (Student s in rezultatiPretrage)
+    {
+        s.PrikaziDetalje();
+    }
     }
 }
 
