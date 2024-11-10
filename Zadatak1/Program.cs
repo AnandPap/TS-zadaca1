@@ -93,7 +93,7 @@ public class StudentskiSistem
          Student student = studenti.Find(s => s.BrojIndeksa == brojIndeksa);
     if (student == null)
     {
-        Console.WriteLine(“Student sa datim indeksom nije pronađen.”);
+        Console.WriteLine("Student sa datim indeksom nije pronađen.");
         return;
     }
 
@@ -106,12 +106,12 @@ public class StudentskiSistem
          Student student = studenti.Find(s => s.BrojIndeksa == brojIndeksa);
     if (student == null)
     {
-        Console.WriteLine(“Student sa datim indeksom nije pronađen.”);
+        Console.WriteLine("Student sa datim indeksom nije pronađen.");
         return;
     }
 
     studenti.Remove(student);
-    Console.WriteLine(“Student je uspješno obrisan.”);
+    Console.WriteLine("Student je uspješno obrisan.");
     }
 
     public static void AzurirajStudenta(int brojIndeksa)
